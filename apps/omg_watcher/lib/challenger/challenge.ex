@@ -30,6 +30,10 @@ defmodule OMG.Watcher.Challenger.Challenge do
           sigs: String.t()
         }
 
+  @doc """
+  Creates human readable representation of a challenge
+  """
+  @spec create(non_neg_integer(), non_neg_integer(), binary(), binary(), binary()) :: t()
   def create(cutxopos, eutxoindex, txbytes, proof, sigs) do
     txbytes = txbytes |> Base.encode16()
     proof = proof |> Base.encode16()
